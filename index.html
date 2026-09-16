@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citron Flasher - Créez vos clés USB amorçables simplement</title>
+    <style>
+        :root {
+            --bg-color: #1b1e2b;
+            --card-bg: #272b3c;
+            --accent-color: #a6e22e;
+            --accent-hover: #92cd25;
+            --text-color: #f8f8f2;
+            --text-muted: #a9b1d6;
+            --border-color: #3b4058;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header / Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 80px;
+            background-color: rgba(27, 30, 43, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 650px;
+        }
+
+        .btn-download {
+            background-color: var(--accent-color);
+            color: #12141d;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.1s;
+            box-shadow: 0 4px 20px rgba(166, 226, 46, 0.3);
+        }
+
+        .btn-download:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .version-info {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* App Preview Section */
+        .preview {
+            display: flex;
+            justify-content: center;
+            padding: 20px 20px 80px;
+        }
+
+        .preview-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .preview-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 80px;
+            background-color: #151722;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .features {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">
+            <span class="logo-icon">🍋</span> Citron Flasher
+        </a>
+        <nav>
+            <a href="#features">Fonctionnalités</a>
+            <a href="#download">Télécharger</a>
+            <a href="https://github.com" target="_blank">GitHub</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Gravez vos images ISO sur clé USB <span>en toute sécurité</span></h1>
+        <p>Citron Flasher est un utilitaire rapide, léger et intuitif pour flasher des images ISO ou IMG sur vos cartes SD et clés USB sans risquer d'écraser vos disques système.</p>
+        
+        <a href="cr.exe" class="btn-download" id="download">Télécharger pour Windows (x64)</a>
+        <div class="version-info">Citron Flasher v1.5 • Gratuit et Open Source</div>
+    </section>
+
+    <!-- App Preview Mockup -->
+    <section class="preview">
+        <div class="preview-box">
+            <!-- Remplace l'image par une capture d'écran de ton application -->
+            <img src="https://via.placeholder.com/650x380/272b3c/a6e22e?text=Aper%C3%A7u+de+Citron+Flasher+v1.5" alt="Interface de Citron Flasher">
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Sélection sécurisée des disques</h3>
+                <p>Protection intégrée qui masque automatiquement vos disques durs internes et la partition système Windows pour éviter toute perte de données accidentelle.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Rapide et léger</h3>
+                <p>Écrit directement en C Win32 natif pour des performances maximales, sans la lourdeur d'un environnement comme Electron.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Suivi en temps réel</h3>
+                <p>Indicateur de progression clair affichant le pourcentage exact et les fichiers en cours d'extraction et de copie.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Citron Flasher. Développé avec soin.</p>
+    </footer>
+
+</body>
+</html>
